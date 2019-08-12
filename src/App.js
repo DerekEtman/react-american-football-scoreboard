@@ -6,7 +6,7 @@ import BottomRow from "./BottomRow";
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
   const [homeScore, homeSetScore] = useState(0);
-  const [awayScore, awaySetScore] = useState('0');
+  const [awayScore, awaySetScore] = useState(0);
 
 
 
@@ -14,6 +14,9 @@ function App() {
   return (
     <div className="container">
       <section className="scoreboard">
+      <div className="game__name">
+        <h1> ODD & EVEN EXTREME</h1>
+      </div>
         <div className="topRow">
           <div className="home">
             <h2 className="home__name">Lions</h2>
@@ -39,6 +42,11 @@ function App() {
         <div className="awayButtons">
           <button className="awayButtons__touchdown" onClick={() => awaySetScore(awayScore + 7)}>Away Touchdown</button>
           <button className="awayButtons__fieldGoal" onClick={() => awaySetScore(awayScore + 3)}>Away Field Goal</button>
+        </div>
+
+        <div className='reset'>
+          <button className="game__reset" onClick={() =>{ homeSetScore(0); awaySetScore(0)}}> Reset Game </button>
+
         </div>
       </section>
     </div>
