@@ -1,12 +1,20 @@
 //TODO: STEP 1 - Import the useState hook.
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./App.css";
 import BottomRow from "./BottomRow";
 
 function App() {
   //TODO: STEP 2 - Establish your applictaion's state with some useState hooks.  You'll need one for the home score and another for the away score.
+
+  //Game Score Tracker 
   const [homeScore, homeSetScore] = useState(0);
   const [awayScore, awaySetScore] = useState(0);
+  
+// Game Timer
+  const [seconds, setSeconds] = useState(new Date().toLocaleTimeString());
+
+
+
 
 
 
@@ -46,8 +54,8 @@ function App() {
 
         <div className='reset'>
           <button className="game__reset" onClick={() =>{ homeSetScore(0); awaySetScore(0)}}> Reset Game </button>
-
         </div>
+
       </section>
     </div>
   );
