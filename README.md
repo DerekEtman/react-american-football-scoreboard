@@ -52,16 +52,20 @@ const [value, setValue] = useState(); // Give these better names, and decide whe
 
 ### STEP 3 - Render the Scores to the DOM
 
-- The scores in the JSX are currently hardcoded to 32 points each. Remove the hardcoded values
-- Render the state values from what we just set up in steps 1 and 2
-- Play around with different initial values to test if they are rendering on the DOM correctly
+[x]- The scores in the JSX are currently hardcoded to 32 points each. Remove the hardcoded values
+[x]- Render the state values from what we just set up in steps 1 and 2
+[x]- Play around with different initial values to test if they are rendering on the DOM correctly
+
+ - if you use a string as useState'sinitial value. The new number will be concatenated to the end of the string
+
+ - if you dont put anything it will return NaN
 
 ### STEP 4 - Add Click Functionality to Increment the Scores
 
-- Add the `onClick` handler to each function
-- Determine how much you will need to increment the score for each button
-  - A touchdown is worth 7 points (assume the following extra point is made)
-  - A field goal is worth 3 points
+[x]- Add the `onClick` handler to each function
+[x]- Determine how much you will need to increment the score for each button
+[x]  - A touchdown is worth 7 points (assume the following extra point is made)
+ [x] - A field goal is worth 3 points
 - Inside the click handlers on each button, use the setter functions for each team to increment the appropriate team's score by the correct amount.
 
 ## Stretch Problems
