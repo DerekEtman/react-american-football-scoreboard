@@ -9,11 +9,21 @@ function App() {
   //Game Score Tracker 
   const [homeScore, homeSetScore] = useState(0);
   const [awayScore, awaySetScore] = useState(0);
-  
+
 // Game Timer
-  const [seconds, setSeconds] = useState(new Date().toLocaleTimeString());
+// const Timer = (props) => {
+  const [time, setTime] = useState(15);
 
+  useEffect(() => {
+    const timeout = setInterval(() => {
+      setTime(time - 1);
+    },1000);
+    return () => {
+      clearTimeout(timeout);
+    }
+  }, [time]);
 
+// }
 
 
 
@@ -23,7 +33,8 @@ function App() {
     <div className="container">
       <section className="scoreboard">
       <div className="game__name">
-        <h1> ODD & EVEN EXTREME</h1>
+        <h1> ODD & EVEN GAME </h1>
+        <h2> EXTREME EDITION!</h2>
       </div>
         <div className="topRow">
           <div className="home">
@@ -33,7 +44,7 @@ function App() {
 
             <div className="home__score" > {homeScore} </div>
           </div>
-          <div className="timer">00:03</div>
+          <div className="timer">{time}</div>
           <div className="away">
             <h2 className="away__name">Tigers</h2>
             <div className="away__score">{awayScore}</div>
@@ -44,16 +55,19 @@ function App() {
       <section className="buttons">
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
-          <button className="homeButtons__touchdown" onClick={() => homeSetScore(homeScore + 7)}>Home Touchdown</button>
-          <button className="homeButtons__fieldGoal" onClick={() => homeSetScore(homeScore + 3)}>Home Field Goal</button>
+          <h2> I Choose:</h2>
+          <button className="homeButtons__touchdown" onClick={() => homeSetScore(homeScore + 7)}>I</button>
+          <button className="homeButtons__fieldGoal" onClick={() => homeSetScore(homeScore + 3)}>II</button>
         </div>
         <div className="awayButtons">
-          <button className="awayButtons__touchdown" onClick={() => awaySetScore(awayScore + 7)}>Away Touchdown</button>
-          <button className="awayButtons__fieldGoal" onClick={() => awaySetScore(awayScore + 3)}>Away Field Goal</button>
+          <h2> Computer Chooses:</h2>
+          <button className="awayButtons__touchdown" onClick={() => awaySetScore(awayScore + 7)}>I</button>
+          <button className="awayButtons__fieldGoal" onClick={() => awaySetScore(awayScore + 3)}>II</button>
         </div>
 
         <div className='reset'>
-          <button className="game__reset" onClick={() =>{ homeSetScore(0); awaySetScore(0)}}> Reset Game </button>
+          <h1>Reset Game?</h1>
+          <button className="game__reset" onClick={() =>{ homeSetScore(0); awaySetScore(0)}}> Yes Please </button>
         </div>
 
       </section>
