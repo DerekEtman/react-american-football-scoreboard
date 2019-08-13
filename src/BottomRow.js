@@ -6,10 +6,12 @@ import App from "./App";
 const BottomRow = () => {
 
 
+
+
   return (
     <div className="bottomRow">
       <div className="down">
-        <h3 className="down__title">You Attack With:</h3>
+        <h3 className="down__title">Your Score:</h3>
         <div className="down__value">3</div>
       </div>
       {/* <div className="toGo">
@@ -21,7 +23,7 @@ const BottomRow = () => {
         <div className="ballOn__value">21</div>
       </div>
       <div className="quarter">
-        <h3 className="quarter__title">Computer Attacks With:</h3>
+        <h3 className="quarter__title">Computers Score:</h3>
         <div className="quarter__value">4</div>
       </div>
     </div>
